@@ -1,0 +1,21 @@
+# Dependencias recomendadas para el proyecto GateGroupHackathon - DataAnalysis
+# Versión mínima recomendada. Ajusta/pinea versiones si necesitas reproducibilidad exacta.
+
+pandas>=2.0
+Faker>=18.0
+SQLAlchemy>=2.0
+PyMySQL>=1.1
+scikit-learn>=1.2
+joblib>=1.2
+streamlit>=1.20
+matplotlib>=3.6
+seaborn>=0.12
+python-dotenv>=1.0
+
+# Útiles para desarrollo / testing (opcional)
+pytest>=7.0
+black>=23.0
+flake8>=6.0
+
+# Nota: para instalar todas las dependencias ejecutar:
+# pip install -r requirements.txt
