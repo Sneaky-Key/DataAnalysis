@@ -164,7 +164,7 @@ for producto in lista_de_productos:
     
     df_producto = df_processed[df_processed['Nombre_Producto'] == producto]
     
-    if len(df_producto) < 50:
+    if len(df_producto) < 10:
         print(f"Saltando '{producto}': datos insuficientes ({len(df_producto)} registros)")
         continue
 
@@ -187,19 +187,33 @@ for producto in lista_de_productos:
 print("\n--- ¡Entrenamiento completado! ---")
 
 
+# ... (código de importación al inicio)
 import joblib
+from pathlib import Path # <--- AÑADE ESTO AL INICIO DE TU SCRIPT
 
-# ... (todo tu código de entrenamiento)...
-# ... (justo después de entrenar todos los modelos) ...
+# ... (todo tu código de 'train.py' hasta el final) ...
 
+print("\n--- ¡Entrenamiento completado! ---")
+
+# --- ¡NUEVO CÓDIGO DE RUTA ABSOLUTA! ---
+# 1. Obtener la ruta de la carpeta DONDE ESTÁ ESTE SCRIPT
+BASE_DIR = Path(__file__).resolve().parent
+
+# 2. Definir los nombres de archivo
+MODEL_FILE = BASE_DIR / "modelos_comida.joblib"
+FEATURES_FILE = BASE_DIR / "lista_de_features.joblib"
+
+# --- CÓDIGO ANTIGUO (MODIFICADO) ---
 print("\n--- Guardando modelos entrenados en archivos... ---")
+print(f"Guardando modelos en: {MODEL_FILE}")
+print(f"Guardando features en: {FEATURES_FILE}")
 
 # Guardamos el diccionario de modelos
-joblib.dump(trained_models, 'modelos_comida.joblib')
+joblib.dump(trained_models, MODEL_FILE) # <--- USA LA NUEVA RUTA
 
 # ¡MUY IMPORTANTE! También guardamos la lista de columnas
 # Necesitamos esto para procesar los datos nuevos exactamente igual
-joblib.dump(model_feature_list, 'lista_de_features.joblib')
+joblib.dump(model_feature_list, FEATURES_FILE) # <--- USA LA NUEVA RUTA
 
 print("Modelos y lista de features guardados exitosamente.")
 
