@@ -163,13 +163,3 @@ $env:DB_URL = "mysql+pymysql://user:pass@host:port/dbname"
 - Valida que los puertos/SSL del servicio de base de datos estén configurados correctamente (algunos scripts usan connect_args para SSL).
 
 ---
-
-## Desarrollo y mejoras sugeridas
-
-1. Añadir `requirements.txt` y/o `environment.yml` para reproducibilidad.
-2. Refactor: extraer conexión a DB y credenciales a un módulo `config.py` y leer variables de entorno.
-3. Tests unitarios mínimos: 
-   - Generador de datos: confirmar que los DataFrames generados respetan tipos y valores.  
-   - Entrenamiento: test que verifica que `joblib` persiste los archivos y que `lista_de_features` contiene las columnas esperadas.  
-4. Mejorar modelos: usar modelos regulares (Ridge/Lasso) y validación cruzada.  
-5. CI: añadir GitHub Actions para linting y pruebas unitarias.
