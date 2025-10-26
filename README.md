@@ -1,4 +1,4 @@
-﻿## GateGroupHackathon — DataAnalysis
+## GateGroupHackathon — DataAnalysis
 
 ¡Bienvenido al repositorio DataAnalysis del Hackathon GateGroup! Este proyecto contiene scripts y datos de apoyo para simular, entrenar y desplegar modelos de consumo de catering en vuelos, además de utilidades para administrar inventario por lotes (FEFO).
 
@@ -173,12 +173,3 @@ $env:DB_URL = "mysql+pymysql://user:pass@host:port/dbname"
    - Entrenamiento: test que verifica que `joblib` persiste los archivos y que `lista_de_features` contiene las columnas esperadas.  
 4. Mejorar modelos: usar modelos regulares (Ridge/Lasso) y validación cruzada.  
 5. CI: añadir GitHub Actions para linting y pruebas unitarias.
-
----
-
-## Autor y licencia
-
-Proyecto para Hackathon GateGroup — autor: Marco (repositorio local). Incluir licencia según necesidad (ej. MIT) si abrirás el código públicamente.
-
----
-
